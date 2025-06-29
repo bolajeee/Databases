@@ -1,6 +1,6 @@
 # connect to sql databae in MySQL server
 import mysql.connector
-from mysql.connector import Error
+# from mysql.connector import Error
 
 def create_database():
     try:
@@ -17,7 +17,7 @@ def create_database():
             # run the connection request
             cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
             print("Database 'alx_book_store' created successfully!")
-    except Error as e:
+    except mysql.connector.Error as e:
         print(f"Failed to connect to database: {e}")
     finally:
         # close the connection or cursor if open
